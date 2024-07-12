@@ -35,7 +35,7 @@ function verification() {
         let errorMessage = "Le libellé doit commencer par une lettre.";
         setError(libelle, errorMessage);
         isValid = false;
-    } else if (libelleValue.length < 5 || libelleValue.length > 20) {
+    } else if (libelleValue.length < 5 || libelleValue.length > 100) {
         let errorMessage = "Le libellé doit avoir entre 5 et 20 caractères.";
         setError(libelle, errorMessage);
         isValid = false;
