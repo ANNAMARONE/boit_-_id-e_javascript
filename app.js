@@ -18,8 +18,9 @@ function verification() {
     const libelleValue = libelle.value.trim();
     const messageValue = message.value.trim();
     let isValid = true;
+const CategorieValide=["politique","sport","santé","édication"]
 
-    if (categorieValue === "") {
+    if (categorieValue === "" || !CategorieValide.includes(categorieValue)) {
         let errorMessage = "La catégorie ne peut pas être vide.";
         setError(categorie, errorMessage);
         isValid = false;
