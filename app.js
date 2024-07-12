@@ -37,7 +37,7 @@ const CategorieValide=["politique","sport","santé","édication"]
         setError(libelle, errorMessage);
         isValid = false;
     } else if (libelleValue.length < 5 || libelleValue.length > 100) {
-        let errorMessage = "Le libellé doit avoir entre 5 et 20 caractères.";
+        let errorMessage = "Le libellé doit avoir au moins 5 et au plus 20 caractères.";
         setError(libelle, errorMessage);
         isValid = false;
     } else {
@@ -53,7 +53,7 @@ const CategorieValide=["politique","sport","santé","édication"]
         setError(message, errorMessage);
         isValid = false;
     } else if (messageValue.length < 20 || messageValue.length > 255) {
-        let errorMessage = "Le message doit avoir entre 20 et 255 caractères.";
+        let errorMessage = "Le message doit avoir au moins 20 et au plus 255 caractères.";
         setError(message, errorMessage);
         isValid = false;
     } else {
@@ -127,21 +127,26 @@ function displayDonnée() {
     }
     dataBody.innerHTML = '';
     storedData.forEach((data, index) => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${data.categorie}</td>
-            <td>${data.libelle}</td>
-            <td>${data.message}</td>
-            <td>
-               <button onclick="toggleApproval(${index})" style="color:white;padding:10px;border:none;border-radius:10px;background-color: ${data.approver ? '#ce0033' : '#008000'}">
+        const cart= document.createElement('cart');
+        cart.innerHTML = `
+        <div style="margin-left:5%;margin-right:5%;margin-top:18px">
+            <h1 style="border-bottom:3px dotted #1b7247;">${data.categorie}</h1>
+            <h3 style="margin-top:5%">${data.libelle}</h3>
+            <p style="margin-top:5%">${data.message}</p>
+          <div style="display:flex; justify-content:space-between;margin-top:20%;align-items: start;">
+               <button onclick="toggleApproval(${index})" style="width:30%;color:white;height:2.5rem;border:none;border-radius:10px;background-color: ${data.approver ? '#ce0033' : '#1B7247'}">
     ${data.approver ? 'Désapprouver' : 'Approuver'}
-</button>
-
-                
-            </td>
-            <td><button onclick="deleteIdea(${index})" style="color:white;background-color:#ce0033;padding:10px;border:none;border-radius:10px">Supprimer</button></td>
+</button>   
+            <button onclick="deleteIdea(${index})" style="padding:8px;border:none;background-color: transparent;"><i class='fas fa-trash-alt' style='font-size:20px;color:red'></i></button>
+            </div>
+            </div>
         `;
-        dataBody.appendChild(row);
+        
+        dataBody.appendChild(cart);
+        dataBody.style="display:flex;border:3px solid #1B7247;flex-wrap:wrap;width:79.5rem;position: relative;";
+
+       
+        cart.style=`border:1px solid ${data.approver ? '#ce0033' : '#1B7247'};box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;margin:10px;height:20rem;width:25rem;`;
     });
 }
 
