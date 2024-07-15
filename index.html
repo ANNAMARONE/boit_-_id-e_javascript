@@ -17,13 +17,13 @@
                     <div class="div1">
                   
                     <div class="input-container">
-                        <input name="libellé" id="libelle" class="input" placeholder="Libellé">
+                        <input name="libellé" id="libelle" class="input" placeholder="Libellé" name="libelle">
                         <small>Message d'erreur</small>
                         <label for=""><ion-icon name="call"></ion-icon>Libellé</label>
                     </div>
                     <div class="input-container">
                         <label for="">Sélectionner la catégorie</label>
-                        <select name="catégorie" id="categorie">
+                        <select name="catégorie" id="categorie" name="categorie">
                             <option value="">Sélectionner la catégorie</option>
                             <option value="politique">Politique</option>
                             <option value="sport">Sport</option>
@@ -38,7 +38,7 @@
                         <small>Message d'erreur</small>
                         <label for="">Message</label>
                     </div>
-                    <input type="submit" value="Soumettre" id="buttonvalue" class="btn">
+                    <input type="submit" value="Soumettre" id="save" class="btn">
                 </form>
                 <div class="erreur">
                    
@@ -56,6 +56,7 @@
 </tbody>
     </table>
     <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
    
 </body>
