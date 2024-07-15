@@ -173,3 +173,4 @@ function displaySuccessMessage() {
 
 // Affichez les données dès que la page est chargée
 document.addEventListener('DOMContentLoaded', displayDonnée);
+
