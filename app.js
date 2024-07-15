@@ -28,6 +28,10 @@ async function sauvegarder(categorieValue, libelleValue, messageValue) {
         console.error('Error inserting data:', error.message);
     }
 }
+const getIdée=async()=>{
+    let cart=document.getElementById('row');
+    
+}
 
 // Fonction de vérification
 function verification() {
